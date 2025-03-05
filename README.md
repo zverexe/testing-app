@@ -19,7 +19,7 @@ The client will be available at port 3000
 
 #### To get the REST API up and running on your dev machine:
 
-1. Start the Docker Desktop application on your computer. For Mac - Look for Docker Desktop in your Applications folder
+1. Start the Docker Desktop application on your computer. For Mac - Look for Docker Desktop in your Applications folder  and open it
 2. Open new terminal window in the root directory of the project and `cd server`
 3. `docker-compose up`
 
