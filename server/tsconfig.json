@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "rootDir": ".",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2022",
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+  },
+  "include": ["./**/*.ts"]
+}

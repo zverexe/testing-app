@@ -1,0 +1,28 @@
+.app-logo {
+  height: 4rem;
+  margin: 0 1rem;
+}
+
+.app-header {
+  position: relative;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.1rem solid #eee;
+}
+
+.app-section {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 4rem auto;
+  padding-left: 1.9999998rem;
+  padding-right: 1.9999998rem;
+}
+
+.app-code {
+  background-color: #ddd;
+  border-radius: 0.2rem;
+  padding: 0 0.3rem;
+  color: #8b0000;
+}

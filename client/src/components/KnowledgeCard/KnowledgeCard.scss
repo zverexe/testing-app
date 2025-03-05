@@ -1,0 +1,239 @@
+.knowledge-card {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 76rem;
+  padding: 6.5rem 6rem 4rem;
+  box-shadow: 0 .2rem 3rem rgba(0, 0, 0, .1);
+  border: .1rem solid #ddd;
+
+  @media (max-width: 33.6875em) {
+    padding: 6rem 3rem 5rem;
+  }
+
+  &__content {
+    max-width: 102rem;
+    width: 100%;
+    min-height: 21rem;
+    margin-bottom: 1.5rem;
+    padding: .4rem;
+  }
+
+  &__title {
+    text-align: left;
+    font-size: 1.7rem;
+    font-weight: 400;
+    letter-spacing: -.02rem;
+    line-height: 2;
+    margin: 0 0 1rem 0;
+  }
+
+  &__media {
+    max-width: 100%;
+    max-height: 64rem;
+
+    &-link {
+      display: inline-block;
+      margin: 1rem 0;
+      color: #747a7e;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__questions {
+    border-top: .1rem solid #8f8f8f;
+    padding: 1rem 0;
+
+    @media (min-width: 45em) {
+      margin: 1.5rem 0 2rem;
+    }
+  }
+
+  &__answer {
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+
+    input[type="radio"] {
+      display: none;
+
+      &:checked + .knowledge-card__radio::after {
+        background-color: gray;
+        transform: scale(1);
+      }
+    }
+
+    &:hover {
+      background-color: #f9f9f9;
+    }
+
+    &.selected {
+      border: 2px solid #747a7e;
+      margin: -1px 0;
+    }
+
+    &:hover .knowledge-card__radio {
+      border-color: #8a8c8d;
+    }
+
+    &:has(input:disabled) {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    margin-left: 7rem;
+    text-align: left;
+  }
+
+  &__radio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 1px solid #8a8c8d;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: border-color 0.3s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: transparent;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.3s, background-color 0.3s;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    padding: 3rem 2rem;
+  }
+
+  &__feedback {
+    display: flex;
+    flex-direction: column;
+
+    &-result {
+      font-family: 'Lato';
+      color: #000;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: .5rem 0 2rem 0;
+      text-align: center;
+    }
+
+    &-text {
+      padding: 0 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &-content {
+      background-color: #f8f8f8;
+      margin-bottom: 3rem;
+      padding-bottom: 1.5rem;
+      padding-top: 3rem;
+
+      &-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: .2rem solid #000;
+        border-radius: 50%;
+        color: #747a7e;
+        height: 6rem;
+        margin: 0 auto;
+        text-align: center;
+        width: 6rem;
+      }
+    }
+  }
+
+  &__error {
+    color: #de1d1d;
+    margin-bottom: 3rem;
+    min-height: 2.4rem;
+    text-align: center;
+
+    &-message {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  &__actions {
+    margin-bottom: 26px;
+  }
+
+  &__submit {
+    cursor: pointer;
+    align-items: center;
+    background-color: #747a7e;
+    border: #747a7e;
+    border-radius: 2rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-family: 'Lato';
+    font-weight: 700;
+    height: 4rem;
+    justify-content: center;
+    letter-spacing: .04em;
+    max-width: 17rem;
+    min-width: 10rem;
+    outline-offset: .2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-transform: uppercase;
+    transition: background .3s, border-color .3s, color .3s;
+    width: 100%;
+  }
+
+  &__retake-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: 0;
+    color: #000;
+    letter-spacing: .8px;
+    outline-offset: 4px;
+    transition: opacity .6s .9s;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+
+    svg {
+      display: block;
+      font-size: 2.2rem;
+      margin-top: 1rem;
+    }
+  }
+}
